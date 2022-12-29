@@ -186,7 +186,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTJ-sp-WnN">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTJ-sp-WnN" customClass="TagsHolderCollectionView" customModule="LoopDemo" customModuleProvider="target">
                                                 <rect key="frame" x="30" y="437" width="330" height="65"/>
                                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                                 <constraints>
@@ -354,6 +354,7 @@
                         <outlet property="ratingKeyFactsView" destination="mm5-FB-9Nx" id="FTy-jk-Xra"/>
                         <outlet property="ratingView" destination="DKU-cY-nRa" id="58o-wf-bRd"/>
                         <outlet property="revenueKeyFactsView" destination="MLq-zr-gfz" id="pOf-c7-cRC"/>
+                        <outlet property="tagsCollectionHolderView" destination="cTJ-sp-WnN" id="XH0-Aw-kHE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6cy-Yz-AGu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

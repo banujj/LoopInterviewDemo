@@ -33,6 +33,10 @@
 		3FEC934D295D80880058C8E4 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC934C295D80880058C8E4 /* MovieDetailsViewController.swift */; };
 		3FEC9350295D8E930058C8E4 /* KeyFactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC934F295D8E930058C8E4 /* KeyFactsView.swift */; };
 		3FEC9352295D8EA00058C8E4 /* KeyFactsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC9351295D8EA00058C8E4 /* KeyFactsView.xib */; };
+		3FEC9358295DAE3A0058C8E4 /* TagsHolderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC9354295DAE3A0058C8E4 /* TagsHolderCollectionViewCell.xib */; };
+		3FEC9359295DAE3A0058C8E4 /* TagsHolderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC9355295DAE3A0058C8E4 /* TagsHolderCollectionView.swift */; };
+		3FEC935A295DAE3A0058C8E4 /* TagsHolderCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC9356295DAE3A0058C8E4 /* TagsHolderCollectionView.xib */; };
+		3FEC935B295DAE3A0058C8E4 /* TagsHolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC9357295DAE3A0058C8E4 /* TagsHolderCollectionViewCell.swift */; };
 		52C963340D5D6BD141A4035F /* Pods_LoopDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C18BE8381138A2036A22AEF /* Pods_LoopDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +70,10 @@
 		3FEC934C295D80880058C8E4 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		3FEC934F295D8E930058C8E4 /* KeyFactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyFactsView.swift; sourceTree = "<group>"; };
 		3FEC9351295D8EA00058C8E4 /* KeyFactsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyFactsView.xib; sourceTree = "<group>"; };
+		3FEC9354295DAE3A0058C8E4 /* TagsHolderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagsHolderCollectionViewCell.xib; sourceTree = "<group>"; };
+		3FEC9355295DAE3A0058C8E4 /* TagsHolderCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsHolderCollectionView.swift; sourceTree = "<group>"; };
+		3FEC9356295DAE3A0058C8E4 /* TagsHolderCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagsHolderCollectionView.xib; sourceTree = "<group>"; };
+		3FEC9357295DAE3A0058C8E4 /* TagsHolderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsHolderCollectionViewCell.swift; sourceTree = "<group>"; };
 		A695443CD906C3D5FE690F28 /* Pods-LoopDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopDemo.release.xcconfig"; path = "Target Support Files/Pods-LoopDemo/Pods-LoopDemo.release.xcconfig"; sourceTree = "<group>"; };
 		C925314BA4FCEF9138756D6E /* Pods-LoopDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopDemo.debug.xcconfig"; path = "Target Support Files/Pods-LoopDemo/Pods-LoopDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +163,7 @@
 		3F99E38C295C759400286FE0 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				3FEC9353295DAE3A0058C8E4 /* TagsHolderCollectionView */,
 				3FEC934E295D8E800058C8E4 /* KeyFactsView */,
 				3F99E38D295C759400286FE0 /* FavouritesHolderCollectionView */,
 				3F99E38E295C759400286FE0 /* MoviesHolderTableView */,
@@ -206,6 +215,17 @@
 				3FEC9351295D8EA00058C8E4 /* KeyFactsView.xib */,
 			);
 			path = KeyFactsView;
+			sourceTree = "<group>";
+		};
+		3FEC9353295DAE3A0058C8E4 /* TagsHolderCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				3FEC9357295DAE3A0058C8E4 /* TagsHolderCollectionViewCell.swift */,
+				3FEC9354295DAE3A0058C8E4 /* TagsHolderCollectionViewCell.xib */,
+				3FEC9355295DAE3A0058C8E4 /* TagsHolderCollectionView.swift */,
+				3FEC9356295DAE3A0058C8E4 /* TagsHolderCollectionView.xib */,
+			);
+			path = TagsHolderCollectionView;
 			sourceTree = "<group>";
 		};
 		CFF4FCA77F145BFCFB08A575 /* Frameworks */ = {
@@ -278,10 +298,12 @@
 			files = (
 				3F99E39C295C7AC100286FE0 /* MoviesFavouriteHeaderCollectionView.xib in Resources */,
 				3F99E376295C668800286FE0 /* staff_picks.json in Resources */,
+				3FEC935A295DAE3A0058C8E4 /* TagsHolderCollectionView.xib in Resources */,
 				3F99E36A295C65C600286FE0 /* LaunchScreen.storyboard in Resources */,
 				3F99E3A2295C89C500286FE0 /* FavouritesMovieCollectionViewCell.xib in Resources */,
 				3F99E367295C65C600286FE0 /* Assets.xcassets in Resources */,
 				3F99E375295C668800286FE0 /* movies.json in Resources */,
+				3FEC9358295DAE3A0058C8E4 /* TagsHolderCollectionViewCell.xib in Resources */,
 				3F99E390295C75B800286FE0 /* FavouritesHolderCollectionView.xib in Resources */,
 				3F99E396295C795000286FE0 /* MoviesHolderTableView.xib in Resources */,
 				3FEC9352295D8EA00058C8E4 /* KeyFactsView.xib in Resources */,
@@ -343,6 +365,7 @@
 				3F99E39E295C7C2A00286FE0 /* MovieTableViewCell.swift in Sources */,
 				3F99E35E295C65C400286FE0 /* AppDelegate.swift in Sources */,
 				3F99E394295C794100286FE0 /* MoviesHolderTableView.swift in Sources */,
+				3FEC935B295DAE3A0058C8E4 /* TagsHolderCollectionViewCell.swift in Sources */,
 				3F99E3A4295C8C8B00286FE0 /* FavouritesMovieCollectionViewCell.swift in Sources */,
 				3FEC9344295D52670058C8E4 /* LoopString_Extensions.swift in Sources */,
 				3FEC934A295D80660058C8E4 /* ViewController.swift in Sources */,
@@ -352,6 +375,7 @@
 				3F99E392295C763C00286FE0 /* FavouritesHolderCollectionView.swift in Sources */,
 				3FEC934D295D80880058C8E4 /* MovieDetailsViewController.swift in Sources */,
 				3FEC9342295D35800058C8E4 /* LoopView_Extensions.swift in Sources */,
+				3FEC9359295DAE3A0058C8E4 /* TagsHolderCollectionView.swift in Sources */,
 				3FEC934B295D80660058C8E4 /* MoviesSearchViewController.swift in Sources */,
 				3F99E389295C6C1000286FE0 /* Constants.swift in Sources */,
 			);

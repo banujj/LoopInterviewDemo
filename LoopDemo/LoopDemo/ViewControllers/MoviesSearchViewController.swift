@@ -37,6 +37,7 @@ class MoviesSearchViewController: UIViewController,UISearchBarDelegate {
         moviesSearchBar.delegate = self
         
         moviesHolderView.setupAndInitializeMoviesData(for: false)
+        moviesHolderView.parentViewController = self
         // Do any additional setup after loading the view.
     }
     

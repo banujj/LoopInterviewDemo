@@ -22,6 +22,8 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet var langaugeKeyFactsView: KeyFactsView!
     @IBOutlet var ratingKeyFactsView: KeyFactsView!
     
+    @IBOutlet var tagsCollectionHolderView: TagsHolderCollectionView!
+    
     var selectedMovie:Movie!
     
     override func viewDidLoad() {
@@ -53,6 +55,31 @@ class MovieDetailsViewController: UIViewController {
         ratingKeyFactsView.loadKeyFacts(with: "Ratings", value: selectedMovie.rating.roundedDecimal(to: 2) + " (" + String(selectedMovie.reviews) + ")")
         
         
+        tagsCollectionHolderView.initializeTagsHolderView(with: selectedMovie.genres)
+        
+        var favouriteImage = UIImage(named: "favorite_on")
+        favouriteImage = favouriteImage?.withRenderingMode(.alwaysOriginal)
+        
+        var closeImage = UIImage(named: "btn_close")
+        closeImage = closeImage?.withRenderingMode(.alwaysOriginal)
+        
+        
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image:closeImage, style:.plain, target: self, action: #selector(closeButtonClicked)),UIBarButtonItem(image: favouriteImage, style:.plain, target: self, action: #selector(favouriteButtonClicked))]
+        
+        // remove left buttons (in case you added some)
+         self.navigationItem.leftBarButtonItems = []
+        // hide the default back buttons
+         self.navigationItem.hidesBackButton = true
+    }
+    
+    @objc func favouriteButtonClicked(){
+        
+        
+    }
+    
+    @objc func closeButtonClicked(){
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
 
