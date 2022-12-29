@@ -6,3 +6,5 @@
 //
 
 import Foundation
+
+let favIdKey:String = "LOOP_MOVIE_FAVID"

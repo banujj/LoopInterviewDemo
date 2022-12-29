@@ -36,9 +36,15 @@ class MoviesSearchViewController: UIViewController,UISearchBarDelegate {
         moviesSearchBar.barTintColor = .white
         moviesSearchBar.delegate = self
         
-        moviesHolderView.setupAndInitializeMoviesData(for: false)
         moviesHolderView.parentViewController = self
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        moviesHolderView.setupAndInitializeMoviesData(for: "movies", shouldShowFavouriteHeader: false)
+        
+        
     }
     
     @objc func btnBackClicked() {

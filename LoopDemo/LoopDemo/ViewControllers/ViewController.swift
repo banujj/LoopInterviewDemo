@@ -15,21 +15,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        if let path = Bundle.main.path(forResource: "movies", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path))
-                let decoder = JSONDecoder()
-                let response:Array<Movie> = try decoder.decode(Array<Movie>.self, from: data)
-                print(response)
-                
-            }
-            catch {
-                print(error)
-            }
-            
-        }
+        
         moviesHolderView.parentViewController = self
-        moviesHolderView.setupAndInitializeMoviesData(for: true)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        moviesHolderView.setupAndInitializeMoviesData(for: "staff_picks", shouldShowFavouriteHeader: true)
+        
     }
 
     

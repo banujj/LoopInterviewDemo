@@ -25,6 +25,7 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet var tagsCollectionHolderView: TagsHolderCollectionView!
     
     var selectedMovie:Movie!
+    var favBarButton:UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,14 +58,15 @@ class MovieDetailsViewController: UIViewController {
         
         tagsCollectionHolderView.initializeTagsHolderView(with: selectedMovie.genres)
         
-        var favouriteImage = UIImage(named: "favorite_on")
-        favouriteImage = favouriteImage?.withRenderingMode(.alwaysOriginal)
+        var favouriteImage = getFavImageForCurrentMovie()
         
         var closeImage = UIImage(named: "btn_close")
         closeImage = closeImage?.withRenderingMode(.alwaysOriginal)
         
+        favBarButton = UIBarButtonItem(image: favouriteImage, style:.plain, target: self, action: #selector(favouriteButtonClicked))
         
-        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image:closeImage, style:.plain, target: self, action: #selector(closeButtonClicked)),UIBarButtonItem(image: favouriteImage, style:.plain, target: self, action: #selector(favouriteButtonClicked))]
+        
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image:closeImage, style:.plain, target: self, action: #selector(closeButtonClicked)),favBarButton]
         
         // remove left buttons (in case you added some)
          self.navigationItem.leftBarButtonItems = []
@@ -73,8 +75,19 @@ class MovieDetailsViewController: UIViewController {
     }
     
     @objc func favouriteButtonClicked(){
+        FavouriteDataSourceManager().synchronizeFavouriteId(movieId: String(selectedMovie.id))
+        favBarButton.image = getFavImageForCurrentMovie()
+    }
+    
+    func getFavImageForCurrentMovie() -> UIImage{
         
-        
+        var favouriteImage = UIImage(named: "favorite_off")
+        if FavouriteDataSourceManager().isMovieIDFavourited(movieId: String(selectedMovie.id)) {
+            //Favourite
+            favouriteImage = UIImage(named: "favorite_on")
+        }
+        favouriteImage = favouriteImage?.withRenderingMode(.alwaysOriginal)
+        return favouriteImage!
     }
     
     @objc func closeButtonClicked(){

@@ -33,10 +33,10 @@ final class MoviesFavouriteHeaderCollectionView: UITableViewHeaderFooterView,Nib
     }
     
     
-    func loadHeaderData(with headerTitle:NSAttributedString, shouldNeedFavouriteCollection:Bool){
+    func loadHeaderData(with headerTitle:NSAttributedString, shouldNeedFavouriteCollection:Bool, parentController:UIViewController?){
         lblHeaderTitle.attributedText = headerTitle
         if shouldNeedFavouriteCollection{
-            favouritesHolderCollectionView.initializeSetupFavouritessHolderView()
+            favouritesHolderCollectionView.initializeSetupFavouritessHolderView(parentController: parentController)
         }else{
             favouritesHolderCollectionView.isHidden = true
         }

@@ -35,14 +35,14 @@ class MoviesHolderTableView: UIView,NibOwnerLoadable {
     }
     
     
-    func setupAndInitializeMoviesData(for shouldShowFavouriteHeader:Bool){
+    func setupAndInitializeMoviesData(for jsonFile:String, shouldShowFavouriteHeader:Bool){
         shouldShowFavouriteHeaders = shouldShowFavouriteHeader
         moviesTableView.delegate = self
         moviesTableView.dataSource = self
         moviesTableView.register(cellType: MovieTableViewCell.self)
 
         moviesList.removeAll()
-        if let path = Bundle.main.path(forResource: "movies", ofType: "json") {
+        if let path = Bundle.main.path(forResource: jsonFile, ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path))
                 let decoder = JSONDecoder()
@@ -108,10 +108,10 @@ extension MoviesHolderTableView: UITableViewDataSource, UITableViewDelegate {
         let header = MoviesFavouriteHeaderCollectionView.loadFromNib() // Create one instance
         if section == 0{
             let attributedHeaderTitle = "YOUR FAVORITES".getThinAndBoldMixedString(boldableString: "FAVORITES", thinFont: UIFont.systemFont(ofSize: 12), boldFont:  UIFont.boldSystemFont(ofSize: 12.0))
-            header.loadHeaderData(with: attributedHeaderTitle, shouldNeedFavouriteCollection: true)
+            header.loadHeaderData(with: attributedHeaderTitle, shouldNeedFavouriteCollection: true, parentController: parentViewController ?? nil)
         }else{
             let attributedHeaderTitle = "OUR STAFF PICKS".getThinAndBoldMixedString(boldableString: "STAFF PICKS", thinFont: UIFont.systemFont(ofSize: 12), boldFont:  UIFont.boldSystemFont(ofSize: 12.0))
-            header.loadHeaderData(with: attributedHeaderTitle, shouldNeedFavouriteCollection: false)
+            header.loadHeaderData(with: attributedHeaderTitle, shouldNeedFavouriteCollection: false, parentController: nil)
         }
        
         return header

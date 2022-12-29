@@ -13,15 +13,15 @@ final class FavouritesHolderCollectionView: UIView,NibOwnerLoadable,UICollection
 
     @IBOutlet var favouritesCollectionView: UICollectionView!
      var favouritesList:Array<Movie> = Array<Movie>()
-    
+    var parentViewController:UIViewController?
           
           required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
             self.loadNibContent()
           }
     
-    func initializeSetupFavouritessHolderView(){
-        
+    func initializeSetupFavouritessHolderView(parentController:UIViewController?){
+        parentViewController = parentController
         self.favouritesCollectionView.register(cellType: FavouritesMovieCollectionViewCell.self)
         
         favouritesCollectionView.delegate = self
@@ -43,30 +43,9 @@ final class FavouritesHolderCollectionView: UIView,NibOwnerLoadable,UICollection
     
     func loadDatas(){
         favouritesList.removeAll()
-        if let path = Bundle.main.path(forResource: "movies", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path))
-                let decoder = JSONDecoder()
-                let response:Array<Movie> = try decoder.decode(Array<Movie>.self, from: data)
-                print(response)
-                favouritesList.append(contentsOf: response)
-                
-            }
-            catch {
-                print(error)
-            }
-            
-        }
-        
+        favouritesList.append(contentsOf: FavouriteDataSourceManager().getFavouriteMovies())
         favouritesCollectionView.reloadData()
         
-        //collectionDecorationsTextCollectionView.addSubview(<#T##view: UIView##UIView#>)
-//        decorationsSymbolsList.append(contentsOf: KeyboardCommonSymobols.shared.getAllSymbolsValuesKeysInOrder())
-        
-//        let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
-//        UIView.animate(views: tblMessageTemplateList.visibleCells, animations: animations, completion: {
-//
-//        })
     }
     
     
@@ -130,7 +109,13 @@ final class FavouritesHolderCollectionView: UIView,NibOwnerLoadable,UICollection
         return CGSize(width: 0, height: 0)
     }
     
-   
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MovieDetailsViewControllerSBID") as! MovieDetailsViewController
+        vc.selectedMovie = favouritesList[indexPath.row]
+        parentViewController?.navigationController!.pushViewController(vc, animated: true)
+ 
+    }
     
 
 }

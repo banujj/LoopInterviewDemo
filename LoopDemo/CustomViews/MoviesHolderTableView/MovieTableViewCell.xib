@@ -82,6 +82,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="favouriteImageView" destination="tJA-1R-Het" id="OuH-3f-5wG"/>
                 <outlet property="lblMovieName" destination="7o1-ph-ZgZ" id="wBB-Im-eFs"/>
                 <outlet property="lblYear" destination="iir-TI-YQs" id="8YJ-16-xvb"/>
                 <outlet property="posterImageView" destination="vUd-wq-a0L" id="bKX-y5-TbO"/>

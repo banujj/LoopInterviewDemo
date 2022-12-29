@@ -23,6 +23,7 @@ final class MovieTableViewCell: UITableViewCell,NibReusable {
     @IBOutlet weak var lblYear: UILabel!
     @IBOutlet weak var lblMovieName: UILabel!
     @IBOutlet weak var starRatingView: FloatRatingView!
+    @IBOutlet weak var favouriteImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,6 +42,13 @@ final class MovieTableViewCell: UITableViewCell,NibReusable {
         posterImageView.sd_setImage(with: URL(string: movie.posterURL), placeholderImage: UIImage(named: "placeholder.png"))
         self.posterImageView.applyPosterDesign(with: 7)
         starRatingView.rating = movie.rating
+        
+        if FavouriteDataSourceManager().isMovieIDFavourited(movieId: String(movie.id)){
+            favouriteImageView.image = UIImage(named: "favorite_on.png")
+        }else{
+            favouriteImageView.image = UIImage(named: "favorite_off.png")
+        }
+        
     }
     
 }
