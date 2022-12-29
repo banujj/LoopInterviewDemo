@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MoviesFavouriteHeaderCollectionView" customModule="LoopDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxa-lR-p3J">
+                    <rect key="frame" x="20" y="10" width="380" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="Rr8-vi-Dz2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="01j-iz-lu6" customClass="FavouritesHolderCollectionView" customModule="LoopDemo" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="50" width="400" height="350"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Pxa-lR-p3J" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="3Df-SR-1l2"/>
+                <constraint firstItem="Pxa-lR-p3J" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="CmE-id-QXB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Pxa-lR-p3J" secondAttribute="trailing" id="GNR-md-IUa"/>
+                <constraint firstItem="01j-iz-lu6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="MKK-Qh-IsC"/>
+                <constraint firstAttribute="bottom" secondItem="01j-iz-lu6" secondAttribute="bottom" id="UBQ-5V-yfn"/>
+                <constraint firstItem="01j-iz-lu6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="k26-CA-QBx"/>
+                <constraint firstItem="01j-iz-lu6" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="rLm-Mn-Yyy"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="favouritesHolderCollectionView" destination="01j-iz-lu6" id="fjk-xg-UsG"/>
+                <outlet property="lblHeaderTitle" destination="Pxa-lR-p3J" id="vUv-kM-T37"/>
+            </connections>
+            <point key="canvasLocation" x="33.846153846153847" y="19.90521327014218"/>
+        </view>
+    </objects>
+</document>

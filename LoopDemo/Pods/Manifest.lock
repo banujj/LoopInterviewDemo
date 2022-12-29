@@ -1,0 +1,30 @@
+PODS:
+  - FloatRatingView (4.0)
+  - Reusable (4.1.2):
+    - Reusable/Storyboard (= 4.1.2)
+    - Reusable/View (= 4.1.2)
+  - Reusable/Storyboard (4.1.2)
+  - Reusable/View (4.1.2)
+  - SDWebImage (5.14.2):
+    - SDWebImage/Core (= 5.14.2)
+  - SDWebImage/Core (5.14.2)
+
+DEPENDENCIES:
+  - FloatRatingView
+  - Reusable
+  - SDWebImage
+
+SPEC REPOS:
+  trunk:
+    - FloatRatingView
+    - Reusable
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  FloatRatingView: bb6bdddfbeec51b1d387b4bd50abc27b4dfccd48
+  Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
+  SDWebImage: b9a731e1d6307f44ca703b3976d18c24ca561e84
+
+PODFILE CHECKSUM: ded3d31822f780402301b4775e4bc6c53c73d810
+
+COCOAPODS: 1.11.3
